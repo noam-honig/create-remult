@@ -1,0 +1,29 @@
+{
+  "name": "create-remult",
+  "version": "0.0.1",
+  "description": "Creates a remult project, ready to go",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "create-remult": "./bin/index.js"
+  },
+  "contributors": [
+    {
+      "name": "Noam Honig",
+      "email": "noam.honig@gmail.com"
+    },
+    {
+      "name": "Jean-Yves Couët",
+      "email": "jycouet@gmail.com"
+    },
+    {
+      "name": "Yoni Rapoport",
+      "email": "yoni.rapoport@gmail.com"
+    }
+  ],
+  "author": "noam.honig@gmail.com",
+  "license": "MIT"
+}
