@@ -127,7 +127,7 @@ copy(
     "[PROJECT_NAME]": projectName,
   },
   { ".meta.gitignore": ".gitignore" },
-  [".meta.json", "node_modules"]
+  [".meta.json", "node_modules", "package-lock.json"]
 );
 
 p.outro(`🎉 Everything is ready!
