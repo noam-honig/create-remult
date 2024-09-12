@@ -105,7 +105,7 @@ if (dirToCreate && !fs.existsSync(projectDir)) {
 const template = options_cli.template
   ? options_cli.template
   : await p.select({
-      message: "Which template do you want to use?",
+      message: "Which template do you want to use ?",
       options,
     });
 if (p.isCancel(template)) {
