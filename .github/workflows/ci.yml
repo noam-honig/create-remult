@@ -1,0 +1,33 @@
+name: Tests
+
+on:
+  pull_request:
+    paths:
+      - "**"
+
+jobs:
+  verify_create:
+    name: Verify Create
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        template: [react-express, sveltekit]
+
+    steps:
+      - name: 🌐 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
+          fetch-depth: 0
+
+      - name: 🧑‍💻 Setup env
+        uses: jycouet/jycouet/shared-config/setup@main
+        with:
+          pnpmVersion: 9
+          nodeVersion: 22.6.0
+
+      - name: ➕ Create template
+        run: pnpm dev test-${{ matrix.template }} -t ${{ matrix.template }}
+
+      - name: 🛠️ install & build
+        run: cd test-${{ matrix.template }} && pnpm i --no-frozen-lockfile && pnpm build
